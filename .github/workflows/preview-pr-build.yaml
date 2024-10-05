@@ -13,6 +13,8 @@ jobs:
   deploy:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
+    outputs:
+      preview_url: ${{ steps.deploy.outputs.url }}
 
     steps:
       # 第一步：检出主仓库代码
