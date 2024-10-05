@@ -57,5 +57,6 @@ jobs:
           projectName: rle-wiki-preview # Cloudflare Pages 项目名称
           directory: docs/.vitepress/dist # 构建输出目录
 
-
-  uses: Leetfs-dev/CI-CD/.github/workflows/comment-pr-preview-link.yml@main
+  comment_on_pr:
+    needs: deploy
+    uses: Leetfs-dev/CI-CD/.github/workflows/comment-pr-preview-link.yml@main
