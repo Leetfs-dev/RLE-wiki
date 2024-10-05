@@ -1,9 +1,6 @@
 name: 部署 PR 到 Cloudflare Pages
 
 on:
-  push:
-    branches:
-      - 'main'
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
@@ -26,10 +23,10 @@ jobs:
           fetch-depth: 0
 
       # 第二步：检出 PR 修改的部分
-      # - name: 检出 PR 修改的部分
-      #   run: |
-      #     git fetch origin +refs/pull/${{ github.event.pull_request.number }}/merge
-      #     git checkout -qf FETCH_HEAD
+      - name: 检出 PR 修改的部分
+        run: |
+          git fetch origin +refs/pull/${{ github.event.pull_request.number }}/merge
+          git checkout -qf FETCH_HEAD
 
       # 第三步：安装 pnpm
       - name: 安装 pnpm
