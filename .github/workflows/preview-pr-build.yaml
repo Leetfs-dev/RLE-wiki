@@ -61,6 +61,6 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      # 第九步：获取预览链接并发送到 PR
+    # 第九步：获取预览链接并发送到 PR
       - name: 调用 B 仓库的工作流
         uses: Leetfs-dev/CI-CD/.github/workflows/comment-pr-preview-link.yml@main
