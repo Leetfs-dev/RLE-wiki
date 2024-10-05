@@ -64,6 +64,3 @@ jobs:
       # 第九步：获取预览链接并发送到 PR
       - name: 调用 B 仓库的工作流
         uses: Leetfs-dev/CI-CD/.github/workflows/comment-pr-preview-link.yml@main
-        with:
-          preview_link: ${{ steps.deploy.outputs.url }}  # 传递生成的预览链接
-          pr_number: ${{ github.event.pull_request.number }}  # 传递 PR 编号
