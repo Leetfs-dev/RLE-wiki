@@ -58,5 +58,4 @@ jobs:
           directory: docs/.vitepress/dist # 构建输出目录
 
   comment_on_pr:
-    needs: deploy
     uses: Leetfs-dev/CI-CD/.github/workflows/comment-pr-preview-link.yml@main
