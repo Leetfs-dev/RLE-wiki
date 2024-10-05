@@ -61,3 +61,5 @@ jobs:
     needs: deploy
     uses: Leetfs-dev/CI-CD/.github/workflows/comment-pr-preview-link.yml@main
     secrets: inherit
+    with:
+      steps.deploy.outputs.url: ${{ steps.deploy.outputs.url }}
